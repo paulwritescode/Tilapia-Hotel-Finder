@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, redirect, url_for
 from database import db_session, init_db
 from models.restaurants import Restaurants
 
@@ -29,8 +29,7 @@ def create_restaurant():
         db_session.add(restaurant)
         db_session.commit()
 
-
-        return '{}, {}, {}'.format(name, description, site_url)
+        return redirect(url_for('restaurant_list'))
 
     return render_template('create_restaurant.html')
 
