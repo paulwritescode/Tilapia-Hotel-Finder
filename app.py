@@ -1,4 +1,5 @@
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask, redirect, render_template, request, url_for
+
 from database import db_session, init_db
 from models.restaurants import Restaurants
 
@@ -40,7 +41,7 @@ def create_restaurant():
 def restaurant_list():
     restaurants = Restaurants.query.all()
 
-    return render_template('restaurant.html', restaurants = restaurants)
+    return render_template('restaurant.html', restaurants = restaurants, title = 'Restaurants List')
 
 
 
@@ -50,3 +51,8 @@ if __name__ == '__main__':
     # when the page is refreshed the changes will happen
     app.jinja_env.auto_reload = True
     app.run(debug=True)
+
+
+#This is the first time that i am wornking with vim editor
+
+

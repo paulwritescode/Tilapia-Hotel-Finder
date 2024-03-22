@@ -32,6 +32,10 @@ MANIFEST
 *.manifest
 *.spec
 
+# Environment
+.turbine
+.turbine/
+
 # Installer logs
 pip-log.txt
 pip-delete-this-directory.txt
